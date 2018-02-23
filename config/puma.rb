@@ -9,9 +9,9 @@ port        ENV['PORT']     || 3000
 environment ENV['RACK_ENV'] || 'development'
 
 on_worker_boot do
-  puts "hi on_worker_boot"
+  puts "[#{`hostname`.strip}] on_worker_boot"
 end
 
 on_worker_shutdown do
-  puts "hi on_worker_shutdown"
+  puts "[#{`hostname`.strip}] on_worker_shutdown"
 end
